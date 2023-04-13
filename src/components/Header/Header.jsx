@@ -1,27 +1,42 @@
-import React from "react";
+import React, { useState } from "react";
 import "../../styles/Header.scss";
 
-function Header() {
+const Header = () => {
+  const [showMenu, setShowMenu] = useState(false);
+
+  const toggleMenu = () => {
+    setShowMenu(!showMenu);
+  };
+
   return (
-    <div className="header">
+    <header>
       <div className="logo">
         <span>TQH</span>
       </div>
-      <nav className="buttons">
-        <a className="button" href="#work">
-          Work
-        </a>
+      <nav className="nav">
+        <button className="hamburger" onClick={toggleMenu}>
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
 
-        <a className="button" href="#about">
-          About
-        </a>
-
-        <a className="button" href="#contact">
-          Hello
-        </a>
+        <ul className={`nav-links ${showMenu ? "show" : ""}`}>
+          <div className="close" onClick={toggleMenu}>
+            x
+          </div>
+          <li>
+            <a href="#work">Work</a>
+          </li>
+          <li>
+            <a href="#about">About</a>
+          </li>
+          <li>
+            <a href="#contact">Contact</a>
+          </li>
+        </ul>
       </nav>
-    </div>
+    </header>
   );
-}
+};
 
 export default Header;

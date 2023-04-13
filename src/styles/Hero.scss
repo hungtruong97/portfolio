@@ -1,0 +1,55 @@
+//Hero component
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 120px 80px;
+  background-color: #f0f0f0;
+
+  .text-container {
+    flex-basis: 50%;
+    h1 {
+      font-size: 48px;
+      line-height: 1.2;
+      margin-bottom: 16px;
+      .bold-text {
+        font-weight: bold;
+      }
+    }
+    .description {
+      font-size: 20px;
+      margin-top: 24px;
+    }
+  }
+
+  .image-container {
+    flex-basis: 45%;
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  // Responsive styles
+  @media only screen and (max-width: 768px) {
+    flex-direction: column;
+    padding: 80px 40px;
+
+    .text-container {
+      margin-bottom: 40px;
+      h1 {
+        font-size: 32px;
+      }
+      .description {
+        font-size: 16px;
+      }
+    }
+    .image-container {
+      margin-bottom: 40px;
+      flex-basis: 100%;
+      img {
+        max-width: 100%;
+      }
+    }
+  }
+}

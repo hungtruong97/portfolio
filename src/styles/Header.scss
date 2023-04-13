@@ -1,12 +1,12 @@
 // Header component
 
-.header {
+header {
   display: flex;
   align-items: center;
   justify-content: space-between;
   background-color: white;
-  height: 64px;
-  padding: 0 40px;
+  height: 96px;
+  padding: 0 128px;
 
   // Logo
   .logo {
@@ -15,25 +15,52 @@
     font-size: 24px;
   }
 
-  // Buttons
-  .buttons {
-    display: flex;
-    align-items: center;
-    list-style: none; // Removes bullet points from list
-
-    // Individual button
-    .button {
-      margin-left: 54px;
-      padding: 8px 16px;
-      border-radius: 4px;
-      font-size: 18px;
-      text-transform: uppercase;
-      color: black;
+  .nav {
+    .hamburger {
+      display: none;
+      border: none;
+      background-color: transparent;
       cursor: pointer;
-      text-decoration: none;
 
-      &:hover {
-        background-color: #eee;
+      span {
+        display: block;
+        width: 30px;
+        height: 3px;
+        margin: 5px 0;
+        background-color: #333;
+        transition: transform 0.3s ease-out;
+      }
+
+      span:nth-child(2) {
+        width: 20px;
+      }
+
+      &:hover span {
+        transform: translateY(-2px);
+      }
+    }
+
+    .nav-links {
+      display: flex;
+      list-style: none;
+
+      .close {
+        display: none;
+      }
+
+      li {
+        margin-left: 5rem;
+
+        a {
+          font-size: 1.2rem;
+          text-decoration: none;
+          color: #333;
+          transition: color 0.3s ease-out;
+
+          &:hover {
+            color: #1da1f2;
+          }
+        }
       }
 
       // Responsive styles
@@ -47,11 +74,51 @@
 
   // Responsive styles
   @media (max-width: 768px) {
-    padding: 0 8px;
-    height: 48px;
+    height: 64px;
+    padding: 0 40px;
+  }
 
-    .logo {
-      height: 24px;
+  // Responsive styles
+  @media only screen and (max-width: 768px) {
+    .nav {
+      .hamburger {
+        display: block;
+      }
+
+      .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        height: 100vh;
+        width: 80%;
+        background-color: #f0f0f0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        transition: right 0.3s ease-out;
+        margin: 0;
+
+        .close {
+          display: block;
+          font-size: 24px;
+          position: absolute;
+          top: 20px;
+          left: 30px;
+        }
+
+        li {
+          margin: 1rem 0;
+        }
+
+        a {
+          font-size: 2rem;
+        }
+
+        &.show {
+          right: 0;
+        }
+      }
     }
   }
 }
