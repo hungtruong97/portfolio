@@ -1,25 +1,26 @@
 import React from "react";
+import "../../styles/Header.scss";
 
 function Header() {
   return (
-    <header>
+    <div className="header">
       <div className="logo">
-        <img src="logo.png" alt="Logo" />
+        <span>TQH</span>
       </div>
-      <nav>
-        <ul>
-          <li>
-            <a href="#work">Work</a>
-          </li>
-          <li>
-            <a href="#about">About</a>
-          </li>
-          <li>
-            <a href="#contact">Contact</a>
-          </li>
-        </ul>
+      <nav className="buttons">
+        <a className="button" href="#work">
+          Work
+        </a>
+
+        <a className="button" href="#about">
+          About
+        </a>
+
+        <a className="button" href="#contact">
+          Hello
+        </a>
       </nav>
-    </header>
+    </div>
   );
 }
 

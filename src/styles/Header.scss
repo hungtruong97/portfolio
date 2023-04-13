@@ -1,0 +1,57 @@
+// Header component
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: white;
+  height: 64px;
+  padding: 0 40px;
+
+  // Logo
+  .logo {
+    height: 32px;
+    width: auto;
+    font-size: 24px;
+  }
+
+  // Buttons
+  .buttons {
+    display: flex;
+    align-items: center;
+    list-style: none; // Removes bullet points from list
+
+    // Individual button
+    .button {
+      margin-left: 54px;
+      padding: 8px 16px;
+      border-radius: 4px;
+      font-size: 18px;
+      text-transform: uppercase;
+      color: black;
+      cursor: pointer;
+      text-decoration: none;
+
+      &:hover {
+        background-color: #eee;
+      }
+
+      // Responsive styles
+      @media (max-width: 768px) {
+        margin-left: 8px;
+        padding: 4px 8px;
+        font-size: 14px;
+      }
+    }
+  }
+
+  // Responsive styles
+  @media (max-width: 768px) {
+    padding: 0 8px;
+    height: 48px;
+
+    .logo {
+      height: 24px;
+    }
+  }
+}
