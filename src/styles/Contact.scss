@@ -1,0 +1,33 @@
+.contact {
+  margin-top: 80px;
+  margin-bottom: 80px;
+  padding: 0 128px;
+
+  h2 {
+    font-size: 2.4rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+  }
+
+  .row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .item {
+      flex-basis: 45%;
+      position: relative;
+      display: flex;
+      justify-content: space-between;
+
+      &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 30px;
+        width: 100%;
+        border: 1px solid black;
+      }
+    }
+  }
+}

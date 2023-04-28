@@ -1,0 +1,43 @@
+.about {
+  margin-top: 80px;
+  padding: 0 128px;
+
+  h2 {
+    font-size: 2.4rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+  }
+
+  .row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .image {
+      flex-basis: 50%;
+
+      img {
+        width: 80%;
+        object-fit: contain;
+      }
+    }
+
+    .desc {
+      flex-basis: 50%;
+    }
+  }
+
+  @media only screen and (max-width: 768px) {
+    padding: 0 40px;
+
+    .row {
+      display: block;
+
+      .image {
+        img {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
